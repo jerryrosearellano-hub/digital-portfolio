@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cinzel', Georgia, serif;
+    --font-decorative: 'Cinzel Decorative', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+}
+
+.font-pirate {
+  font-family: var(--font-display);
+}
+
+.font-decorative {
+  font-family: var(--font-decorative);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Aged Parchment Texture & Styling */
+.parchment-card {
+  background-color: #F4E7C8;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(255, 251, 240, 0.7) 0px, transparent 55%),
+    radial-gradient(at 85% 85%, rgba(203, 173, 118, 0.45) 0px, transparent 55%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(139, 105, 53, 0.03) 0px,
+      rgba(139, 105, 53, 0.03) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  color: #2A1E11;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.65),
+    inset 0 0 32px rgba(139, 98, 38, 0.28),
+    inset 0 0 4px rgba(92, 61, 20, 0.45);
+}
+
+.parchment-poster {
+  background-color: #EFE0BB;
+  background-image: 
+    radial-gradient(circle at 50% 35%, rgba(255, 250, 235, 0.8) 0%, rgba(226, 202, 150, 0.4) 65%, rgba(176, 139, 79, 0.35) 100%);
+  color: #2A1B0E;
+  box-shadow: 
+    0 18px 38px rgba(0, 0, 0, 0.65),
+    inset 0 0 40px rgba(122, 82, 30, 0.35),
+    0 0 0 1px rgba(145, 104, 48, 0.5);
+}
+
+/* Nautical Map Grid Pattern */
+.nautical-grid {
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+}
+
+/* Compass slow rotation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-ship {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 45s linear infinite;
+}
+
+.animate-float-ship {
+  animation: float-ship 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3.5s ease-in-out infinite;
+}
+
+/* Chopper Mascot & Zoro vs Sanji Animations */
+@keyframes chopper-bounce {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-7px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+@keyframes chopper-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes zoro-clash {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  40% {
+    transform: translateX(8px) rotate(6deg);
+  }
+  60% {
+    transform: translateX(-3px) rotate(-3deg);
+  }
+}
+
+@keyframes sanji-clash {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  40% {
+    transform: translateX(-8px) rotate(-6deg);
+  }
+  60% {
+    transform: translateX(3px) rotate(3deg);
+  }
+}
+
+@keyframes spark-flash {
+  0%, 100% {
+    transform: scale(0.85) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.18) rotate(15deg);
+    opacity: 1;
+  }
+}
+
+.animate-chopper-bounce {
+  animation: chopper-bounce 2.6s ease-in-out infinite;
+}
+
+.animate-chopper-wave {
+  transform-origin: bottom center;
+  animation: chopper-wave 0.9s ease-in-out infinite;
+}
+
+.animate-zoro-clash {
+  animation: zoro-clash 1.1s ease-in-out infinite;
+}
+
+.animate-sanji-clash {
+  animation: sanji-clash 1.1s ease-in-out infinite;
+}
+
+.animate-spark-flash {
+  animation: spark-flash 0.8s ease-in-out infinite;
+}
+
+/* Nami Companion Entrance, Idle & Click Reaction Animations */
+@keyframes nami-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes nami-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(2deg);
+  }
+}
+
+@keyframes nami-react {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.14) translateY(-9px) rotate(-7deg);
+  }
+  65% {
+    transform: scale(1.1) translateY(-4px) rotate(7deg);
+  }
+  100% {
+    transform: scale(1) translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-nami-entrance {
+  animation: nami-slide-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-nami-float {
+  animation: nami-float 3.1s ease-in-out infinite;
+}
+
+.animate-nami-react {
+  animation: nami-react 0.55s ease-in-out;
+}
+
+/* Thousand Sunny & Going Merry Distant Sea Sailing Animations */
+@keyframes sunny-voyage {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(-1deg);
+  }
+  25% {
+    transform: translate3d(28px, -7px, 0) rotate(1.5deg);
+  }
+  50% {
+    transform: translate3d(56px, 0px, 0) rotate(-0.8deg);
+  }
+  75% {
+    transform: translate3d(24px, -6px, 0) rotate(1.2deg);
+  }
+}
+
+@keyframes merry-voyage {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0) rotate(1deg);
+  }
+  33% {
+    transform: translate3d(-32px, -8px, 0) rotate(-1.5deg);
+  }
+  66% {
+    transform: translate3d(-58px, -2px, 0) rotate(1.2deg);
+  }
+}
+
+@keyframes ocean-wave-drift {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-24px);
+  }
+}
+
+.animate-sunny-voyage {
+  animation: sunny-voyage 26s ease-in-out infinite;
+}
+
+.animate-merry-voyage {
+  animation: merry-voyage 34s ease-in-out infinite;
+}
+
+.animate-ocean-wave {
+  animation: ocean-wave-drift 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-float-ship,
+  .animate-pulse-glow,
+  .animate-chopper-bounce,
+  .animate-chopper-wave,
+  .animate-zoro-clash,
+  .animate-sanji-clash,
+  .animate-spark-flash,
+  .animate-nami-entrance,
+  .animate-nami-float,
+  .animate-nami-react,
+  .animate-sunny-voyage,
+  .animate-merry-voyage,
+  .animate-ocean-wave {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Prevent unwanted pink/magenta browser or inspector focus outlines across portfolio cards; use gold accessible focus */
+*,
+*::before,
+*::after {
+  outline-color: #D4AF37;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+article:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #D4AF37 !important;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050d1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a5f;
+  border: 2px solid #050d1a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
